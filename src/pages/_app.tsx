@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import { HeaderAnnouncement } from "@/components/HeaderAnnouncement";
+import Footer from "@/components/Footer/_index";
+import HeaderAnnouncement from "@/components/HeaderAnnouncement/_index";
 import { HeaderClient } from "@/components/HeaderClient/_index";
 
 import "@/styles/globals.css";
