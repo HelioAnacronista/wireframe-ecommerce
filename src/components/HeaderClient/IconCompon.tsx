@@ -1,8 +1,8 @@
 function IconCompany() {
   return (
-    <div>
-    <img src="/images/companyname.svg" alt="" />
-  </div>
+    <div className="mr-2">
+      <img src="/images/companyname.svg" alt="" />
+    </div>
   );
 }
 

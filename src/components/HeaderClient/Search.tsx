@@ -1,6 +1,6 @@
 function Search() {
   return (  
-  <div className="w-[578px] h-[48px] bg-[#FFFFFF] flex rounded-full p-2"
+  <div className="w-[578px] h-[48px] bg-[#FFFFFF] flex rounded-full p-2 mr-2"
     >
       <input type="text" value="" alt=""
       placeholder="As melhores ofertas estão aqui" 

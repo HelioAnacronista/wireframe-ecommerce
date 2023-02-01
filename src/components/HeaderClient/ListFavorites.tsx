@@ -1,6 +1,6 @@
 function ListFavorites() {
   return ( 
-    <div>
+    <div className="m-2">
       <img src="images/fav-icon.svg" alt="" />
     </div>
    );
