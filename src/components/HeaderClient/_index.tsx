@@ -7,23 +7,22 @@ import Search from "./Search";
 
 export function HeaderClient() {
   return (
-    <>      
-    <header className="pt-7 bg-[#5F5C6B] h-[122px]">
-      <div className="container mx-auto flex">
-      <IconCompany />
+    <>
+      <header className="h-[122px] bg-[#5F5C6B] pt-7">
+        <div className="container flex items-center justify-center">
+          <IconCompany />
 
-      <Search />
+          <Search />
 
-      <AccessAccount />
+          <AccessAccount />
 
-      <div className='flex'>
-        <ListFavorites />
-        <Cart />
-      </div>
-      </div>
-    </header>
-  <NavBar />
-  </>
+          <div className="flex">
+            <ListFavorites />
+            <Cart />
+          </div>
+        </div>
+      </header>
+      <NavBar />
+    </>
   );
 }
-

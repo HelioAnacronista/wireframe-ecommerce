@@ -4,10 +4,12 @@ import Credits from "./Credits";
 
 function Footer() {
   return (
-    <footer className="text-center lg:text-left bg-gray-100 text-gray-600">
-      <Networks />
-      <Navigation />
-      <Credits />
+    <footer className="text-gray-600 bg-mainColor-50">
+      <div className="container text-center lg:text-left">
+        <Networks />
+        <Navigation />
+        <Credits />
+      </div>
     </footer>
   );
 }
