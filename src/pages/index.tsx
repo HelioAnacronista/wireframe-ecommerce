@@ -1,10 +1,9 @@
-
-
+import { Carousel } from "@/components/Carousel";
 
 export default function Home() {
   return (
     <>
-      <h1 className="my-40 text-3xl font-bold underline">content</h1>
+      <Carousel />
     </>
   );
 }
