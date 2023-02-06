@@ -1,63 +1,63 @@
 import "swiper/swiper-bundle.css";
 
-import Link from "next/link";
 import React from "react";
-import { BiShoppingBag } from "react-icons/bi";
+import { MdNavigateNext, MdStar } from "react-icons/md";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
+
+//<span className="border-cyan-400 h-10 border" /> |
 
 export const Carousel = ({ className = "" }) => {
   const slides = [];
 
   for (let i = 1; i < 5; i++) {
     slides.push(
-      <SwiperSlide
-        className="grid w-full md:grid-flow-col lg:grid-cols-2"
-        key={`slide-${i}`}
-        tag="li"
-      >
-        <div className="bg-black absolute inset-0 bg-opacity-40 lg:hidden"></div>
-        <img src={`https://picsum.photos/${i}/1/1920/1080`} alt="" />
-        <div
-          className="
-          lg:text-black 
-          text-white 
-          absolute 
-          flex 
-          flex-col 
-          items-start 
-          justify-center 
-          p-4 
-          px-[15%] 
-          py-[10%]
-          lg:static
-          lg:py-0
-          "
-        >
-          <h1 className="text-4xl font-bold lg:text-6xl"> Summer is coming </h1>
-          <h1 className="text-4xl font-bold lg:text-6xl"> Upto 80% OFF </h1>
-          <h1 className="my-5 lg:text-xl ">
-            {" "}
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </h1>
-          <div className="shadow-yellow-400 shadow-md">
-            <Link
-              className="bg-yellow-300 flex gap-3 px-4 py-3"
-              href={`/catalog/${i}`}
-            >
-              <span className="text-md text-gray-900 my-auto mr-2 font-bold">
-                {" "}
-                Compre agora{" "}
-              </span>
-              <span className="border-cyan-400 h-10 border" />
-              <BiShoppingBag className="my-auto" size={30} />
-            </Link>
+      <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
+        <div className="static">
+          <img
+            src={`https://picsum.photos/id/1/1920/1080`}
+            width={1920}
+            height={1080}
+            alt={`Slide 1`}
+            className="object-cover sm:h-[592px] sm:w-[592px]"
+          />
+          <div className="items-center justify-center">
+            <div className="absolute inset-x-0 top-20 text-center">
+              <div className="flex items-center justify-center text-center text-mainColor-50">
+                <MdStar />
+                <MdStar />
+                <MdStar />
+                <MdStar />
+                <MdStar />
+              </div>
+            </div>
+            <div className="absolute inset-x-0 top-40 left-20">
+              <h1 className="text-4xl font-bold text-mainColor-50 lg:text-6xl">
+                Nome do produto
+              </h1>
+            </div>
+
+            <div className="absolute bottom-36 left-20">
+              <div
+                className="absolute h-[160px] w-[339px]  items-center justify-center 
+                rounded-lg bg-white-900 p-5
+                font-semibold
+                text-mainColor-700
+                shadow-md"
+              >
+                <div className="mb-3 h-[52px] w-[292px] items-center justify-center rounded-md bg-[#F6F6F8] pt-2 text-center text-[#5F5C6B]">
+                  Booking now $99
+                </div>
+                <div className="flex h-[52px] w-[292px] items-center justify-center rounded-md bg-[#5F5C6B] text-center text-white-900">
+                  mais opções
+                  <MdNavigateNext size={30} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="hidden"></div>
       </SwiperSlide>
     );
   }
@@ -65,7 +65,7 @@ export const Carousel = ({ className = "" }) => {
   return (
     <React.Fragment>
       <Swiper
-        className={`bg-cyan-400 h-[450px] select-none lg:h-[600px] ${className}`}
+        className={`bg-cyan-400 h-[672px] select-none  ${className}`}
         tag="section"
         wrapperTag="ul"
         id="main"

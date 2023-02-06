@@ -34,6 +34,9 @@ module.exports = {
         800: "#434149",
         900: "#3b3940",
       },
+      white: {
+        900: "#FFF",
+      },
     },
   },
   plugins: [require("prettier-plugin-tailwindcss")],
