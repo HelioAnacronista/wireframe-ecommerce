@@ -3,10 +3,11 @@ import "swiper/swiper-bundle.css";
 import React from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import AdImage from "./AdImage";
-import Bottom from "./Bottom";
-import Middle from "./middle";
-import Top from "./Top";
+import ImageAd from "./ImageAd";
+import TopAd from "./TopAd";
+import MiddleAd from "./MiddleAd";
+import BottomAd from "./BottomAd";
+
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -17,12 +18,12 @@ export const Carousel = ({ className = "" }) => {
     slides.push(
       <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
         <div className="static">
-          <AdImage />
+          <ImageAd />
           <div className="items-center justify-center">
-            <Top />
-            <Middle />
+            <TopAd />
+            <MiddleAd />
             <div className="absolute bottom-36 left-20">
-              <Bottom />
+              <BottomAd />
             </div>
           </div>
         </div>
