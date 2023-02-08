@@ -40,6 +40,18 @@ module.exports = {
       white: {
         900: "#FFF",
       },
+      trout: {
+        50: "#f4f5f7",
+        100: "#e4e8e9",
+        200: "#ccd1d5",
+        300: "#a8b1b8",
+        400: "#7d8a93",
+        500: "#626f78",
+        600: "#545e66",
+        700: "#495057",
+        800: "#40454a",
+        900: "#383b41",
+      },
     },
   },
   plugins: [require("prettier-plugin-tailwindcss")],
