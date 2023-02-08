@@ -3,11 +3,10 @@ import "swiper/swiper-bundle.css";
 import React from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ImageAd from "./ImageAd";
-import TopAd from "./TopAd";
-import MiddleAd from "./MiddleAd";
 import BottomAd from "./BottomAd";
-
+import ImageAd from "./ImageAd";
+import MiddleAd from "./MiddleAd";
+import TopAd from "./TopAd";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -22,7 +21,7 @@ export const Carousel = ({ className = "" }) => {
           <div className="items-center justify-center">
             <TopAd />
             <MiddleAd />
-            <div className="absolute bottom-36 left-20">
+            <div className="absolute bottom-[164px] left-20">
               <BottomAd />
             </div>
           </div>
@@ -34,7 +33,7 @@ export const Carousel = ({ className = "" }) => {
   return (
     <React.Fragment>
       <Swiper
-        className={`bg-cyan-400 h-[672px] select-none  ${className}`}
+        className={`bg-cyan-400 h-[700px] select-none  ${className}`}
         tag="section"
         wrapperTag="ul"
         id="main"
