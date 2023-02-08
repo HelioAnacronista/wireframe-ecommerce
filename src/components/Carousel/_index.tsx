@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import BottomAd from "./BottomAd";
 import ImageAd from "./ImageAd";
 import MiddleAd from "./MiddleAd";
+import Page from "./Page";
 import TopAd from "./TopAd";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -13,16 +14,17 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 export const Carousel = ({ className = "" }) => {
   const slides = [];
 
-  for (let i = 1; i < 5; i++) {
+  let n: number = 3;
+  for (let i = 0; i < n; i++) {
     slides.push(
       <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
         <div className="static">
           <ImageAd />
-          <div className="items-center justify-center">
+          <div className="container flex items-center justify-center">
             <TopAd />
             <MiddleAd />
-            <div className="absolute bottom-[164px] left-20">
-              <BottomAd />
+            <div className="container flex items-center justify-center">
+              <BottomAd children={<Page page={i} totalPages={3} />} />
             </div>
           </div>
         </div>

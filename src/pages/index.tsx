@@ -10,6 +10,9 @@ export default function Home() {
         <CardProduct />
         <CardProduct />
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
     </>
   );
 }
