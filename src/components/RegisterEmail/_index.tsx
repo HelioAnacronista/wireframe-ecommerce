@@ -8,25 +8,13 @@ function RegisterEmail() {
       <div className="flex items-center justify-center pt-10">
         <img src="/images/phone.svg" alt="" />
       </div>
-      <div className="">
-        <FromPlus />
-      </div>
 
-      {/* vatagens etc.. */}
+      <FromPlus />
       <MiddlePlus />
-      {/* vatagens etc.. */}
+
       <div className="flex items-center justify-center">
         <BottomPlus />
       </div>
-
-      <br />
-      <br />
-      <br />
-      <p>area de testes</p>
-
-      <br />
-      <br />
-      <br />
     </div>
   );
 }
