@@ -1,11 +1,12 @@
 type PriceProps = {
   price: number;
+  className?: string;
 };
 
-function Price({ price }: PriceProps) {
+function Price({ price, className }: PriceProps) {
   return (
     <div>
-      <p className="text-2xl font-bold text-mainColor-900 lg:text-lg">
+      <p className={`${className}`}>
         {new Intl.NumberFormat("pt-BR", {
           style: "currency",
           currency: "BRL",

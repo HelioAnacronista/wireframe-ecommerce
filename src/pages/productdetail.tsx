@@ -1,4 +1,5 @@
 import CardProduct from "@/components/CardProduct/_index";
+import ClientFeedback from "@/components/ClientFeedback/_index";
 import ProductCategoryCarousel from "@/components/ProductCategoryCarousel/_index";
 import { MdOutlineExpandMore, MdStar } from "react-icons/md";
 
@@ -25,24 +26,29 @@ function productdetail() {
         <ProductCategoryCarousel />
       </div>
 
-      <div>
-        <h1>Avaliações de Clientes</h1>
-        <div className="flex">
+      <div className="container mb-96">
+        <div>
+          <h1 className="text-xl font-bold text-mainColor-600">
+            Avaliações de Clientes
+          </h1>
+        </div>
+
+        <div className="container flex   justify-between text-mainColor-600">
           <div>
-            <h1>5.0</h1>
-            <div className="absolute">(63 avaliações)</div>
+            <h1 className="text-2xl font-bold">5.0</h1>
+            <div className="left- absolute text-xs ">(63 avaliações)</div>
           </div>
           <div className="flex">
-            <MdStar />
-            <MdStar />
-            <MdStar />
-            <MdStar />
-            <MdStar />
+            <MdStar size={20} />
+            <MdStar size={20} />
+            <MdStar size={20} />
+            <MdStar size={20} />
+            <MdStar size={20} />
             <div>
               <MdOutlineExpandMore />
             </div>
           </div>
-          <div>
+          <div className="sm:hidden">
             <h4>100% dos clientes recomendam esse produto</h4>
           </div>
           <div>
@@ -54,12 +60,16 @@ function productdetail() {
               <MdOutlineExpandMore />
             </div>
           </div>
+        </div>
 
-          <div className="mt-10">
-            <div>
-              <h1>João</h1>
-            </div>
-          </div>
+        <div className="my-10">
+          <ClientFeedback />
+          <ClientFeedback />
+        </div>
+        <div>
+          <button className="h-[55px] w-[250px] rounded-3xl bg-mainColor-900 text-white-900">
+            Ver mais avaliações
+          </button>
         </div>
       </div>
     </>

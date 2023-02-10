@@ -5,7 +5,8 @@ import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageAd from "./ImageAd";
 import Page from "./Page";
-import Price from "./Price";
+
+import Price from "../Price";
 import Title from "./Title";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -22,19 +23,28 @@ export const ProductCategoryCarousel = ({ className = "" }) => {
             <div className="mx-3">
               <ImageAd />
               <Title title="Notebook Apple MacBook" />
-              <Price price={90.5} />
+              <Price
+                className="text-xl font-bold text-mainColor-900 lg:text-lg"
+                price={90.5}
+              />
             </div>
 
             <div className="mx-3">
               <ImageAd />
               <Title title="Notebook Apple MacBook" />
-              <Price price={90.5} />
+              <Price
+                className="text-xl font-bold text-mainColor-900 lg:text-lg"
+                price={90.5}
+              />
             </div>
 
             <div className="mx-3">
               <ImageAd />
               <Title title="Notebook Apple MacBook" />
-              <Price price={90.5} />
+              <Price
+                className="text-xl font-bold text-mainColor-900 lg:text-lg"
+                price={90.5}
+              />
             </div>
           </div>
 
