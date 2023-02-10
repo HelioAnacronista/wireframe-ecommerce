@@ -1,7 +1,7 @@
 function HeaderAnnouncement() {
   return (
-    <header className="h-10 bg-mainColor-200">
-      <div className="flex items-center justify-center pt-2">
+    <header className=" bg-mainColor-200 py-1">
+      <div className="flex items-center justify-center">
         <img src="/images/announcement.svg" alt="" />
       </div>
     </header>

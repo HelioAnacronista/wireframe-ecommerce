@@ -1,4 +1,4 @@
-import CardProduct from "@/components/CardProduct/_index";
+import CardProduct from "@/components/CardProductHome/_index";
 import Carousel from "@/components/Carousel/_index";
 import ProductCategoryCarousel from "@/components/ProductCategoryCarousel/_index";
 import RegisterEmail from "@/components/RegisterEmail/_index";
@@ -13,7 +13,7 @@ export default function Home() {
         <CardProduct />
       </div>
 
-      <div>
+      <div className="my-10">
         <RegisterEmail />
       </div>
 
