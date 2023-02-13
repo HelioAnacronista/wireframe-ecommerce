@@ -4,7 +4,6 @@ import React from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageAd from "./ImageAd";
-import Page from "./Page";
 
 import Price from "../Price";
 import Title from "./Title";
@@ -47,10 +46,6 @@ export const ProductCategoryCarousel = ({ className = "" }) => {
               />
             </div>
           </div>
-
-          <div className="flex items-center justify-center">
-            <Page page={i} totalPages={n} />
-          </div>
         </div>
       </SwiperSlide>
     );
@@ -59,7 +54,7 @@ export const ProductCategoryCarousel = ({ className = "" }) => {
   return (
     <React.Fragment>
       <Swiper
-        className={`m h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
+        className={` h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
         tag="section"
         wrapperTag="ul"
         id="main"

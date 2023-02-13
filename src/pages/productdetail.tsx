@@ -66,10 +66,19 @@ function productdetail() {
           <ClientFeedback />
           <ClientFeedback />
         </div>
-        <div>
+        <div className="flex items-center justify-center">
           <button className="h-[55px] w-[250px] rounded-3xl bg-mainColor-900 text-white-900">
             Ver mais avaliações
           </button>
+        </div>
+
+        <div className="mt-10">
+          <div className="container">
+            <h1 className="text-2xl font-bold text-mainColor-900">
+              Produtos {"{...}"}
+            </h1>
+          </div>
+          <ProductCategoryCarousel />
         </div>
       </div>
     </>

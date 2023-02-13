@@ -8,6 +8,7 @@ type Props = {
 
 import { MdNavigateNext } from "react-icons/md";
 import Price from "../Price";
+import Page from "../ProductCategoryCarousel/Page";
 import ProductInfo from "./ProductInfo";
 import ShippingEstimator from "./ShippingEstimator";
 
@@ -23,8 +24,14 @@ function CardProduct({ title, price, description, image, categoria }: Props) {
           );
         })}
       </div>
-      <div className="mt-1 flex items-center justify-center">
-        <img src={image} width={"70%"} height={"70%"} />
+
+      <div>
+        <div className="mt-1 flex items-center justify-center">
+          <img src={image} width={"70%"} height={"70%"} />
+        </div>
+        <div className="my-2 flex items-center justify-center">
+          <Page page={1} totalPages={3} />
+        </div>
       </div>
 
       <div className="text-center text-mainColor-800">
