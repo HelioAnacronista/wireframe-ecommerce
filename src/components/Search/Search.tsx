@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MdSearch } from "react-icons/md";
 
 interface searchProps {
@@ -38,11 +37,12 @@ function Search({ showSearch, setShowSearch }: searchProps) {
           >
             <input
               className="
-              h-2
+              h-full
               w-full
-              rounded-full 
+              rounded-full
               border-0 
-              bg-mainColor-50 text-sm 
+              bg-mainColor-50 
+              pl-1 text-sm 
               focus:focus:outline-none
               focus:ring-0
             "

@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 interface IconCompanyProps {
   img?: string;
@@ -7,9 +7,11 @@ interface IconCompanyProps {
 function IconCompany({ img }: IconCompanyProps) {
   return (
     <>
-      {img && (
-        <img src={img} alt="Company logo" className="rounded-full  p-1" />
-      )}
+      <Link href={"/"}>
+        {img && (
+          <img src={img} alt="Company logo" className="rounded-full  p-1" />
+        )}
+      </Link>
     </>
   );
 }
