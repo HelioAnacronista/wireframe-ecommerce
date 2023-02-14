@@ -1,4 +1,16 @@
-function CardProductHome() {
+import Price from "../Price";
+
+interface CardProductHomeProps {
+  name: string;
+  price: number;
+  discountedPrice: number;
+}
+
+function CardProductHome({
+  name,
+  price,
+  discountedPrice,
+}: CardProductHomeProps) {
   return (
     <div className="border-indigo-600 container mt-5 font-sans">
       <div className="flex justify-center">
@@ -7,13 +19,17 @@ function CardProductHome() {
 
       <div className="">
         <div className="flex justify-center">
-          <h2>Notebook Apple MacBook</h2>
+          <h2>{name}</h2>
         </div>
         <div className="flex justify-center">
-          <s>De R$99.55</s>
+          <s className="flex">
+            <Price beforeName="De " price={Number(discountedPrice)} />
+          </s>
         </div>
-        <div className="flex justify-center rounded-sm bg-white-900 shadow-lg">
-          <p className="text-2xl font-bold text-[#4E4B59]">Por R$ 90.50</p>
+        <div className="flex justify-center rounded-sm bg-mainColor-50 shadow-sm">
+          <p className="text-2xl font-bold text-[#4E4B59]">
+            <Price price={Number(price)} />
+          </p>
         </div>
       </div>
     </div>

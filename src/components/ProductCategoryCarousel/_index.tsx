@@ -10,7 +10,15 @@ import Title from "./Title";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-export const ProductCategoryCarousel = ({ className = "" }) => {
+interface ProductCategoryCarouselProps {
+  title?: string;
+  className?: string;
+}
+
+export const ProductCategoryCarousel = ({
+  title,
+  className,
+}: ProductCategoryCarouselProps) => {
   const slides = [];
 
   let n: number = 3;
@@ -52,21 +60,24 @@ export const ProductCategoryCarousel = ({ className = "" }) => {
   }
 
   return (
-    <React.Fragment>
-      <Swiper
-        className={` h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
-        tag="section"
-        wrapperTag="ul"
-        id="main"
-        navigation
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
-      >
-        {slides}
-      </Swiper>
-    </React.Fragment>
+    <>
+      <h2>{title}</h2>
+      <React.Fragment>
+        <Swiper
+          className={` h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
+          tag="section"
+          wrapperTag="ul"
+          id="main"
+          navigation
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
+        >
+          {slides}
+        </Swiper>
+      </React.Fragment>
+    </>
   );
 };
 
