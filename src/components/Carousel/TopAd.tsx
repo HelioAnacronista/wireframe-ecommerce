@@ -2,7 +2,7 @@ import { MdStar } from "react-icons/md";
 
 function Top() {
   return (
-    <div className="absolute inset-x-0 top-20 text-center">
+    <div className="absolute inset-x-0 top-20 z-0 text-center">
       <div
         className="
         ml-20 mr-28  flex items-center justify-center

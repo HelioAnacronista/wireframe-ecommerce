@@ -5,7 +5,7 @@ function AdImage() {
       width={1920}
       height={1080}
       alt={`Slide 1`}
-      className="object-cover sm:h-[592px] sm:w-[592px]"
+      className="z-0 object-cover sm:h-[592px] sm:w-[592px]"
     />
   );
 }

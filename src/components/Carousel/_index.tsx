@@ -28,7 +28,7 @@ export const Carousel = ({ className = "" }) => {
   for (let i = 0; i < n; i++) {
     slides.push(
       <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
-        <div className="static">
+        <div>
           <ImageAd />
           <div className="container flex items-center justify-center">
             <TopAd />
