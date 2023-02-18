@@ -1,10 +1,11 @@
 import "swiper/swiper-bundle.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageAd from "./ImageAd";
 
+import Loader from "../Loader";
 import Price from "../Price";
 import Title from "./Title";
 
@@ -20,6 +21,16 @@ export const ProductCategoryCarousel = ({
   className,
 }: ProductCategoryCarouselProps) => {
   const slides = [];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 5000); // set the timeout duration in milliseconds
+
+    return () => clearTimeout(timeout);
+  }, []); // empty array as second argument means this effect only runs once
 
   let n: number = 3;
   for (let i = 0; i < n; i++) {
@@ -61,22 +72,30 @@ export const ProductCategoryCarousel = ({
 
   return (
     <>
-      <h2>{title}</h2>
-      <React.Fragment>
-        <Swiper
-          className={` h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
-          tag="section"
-          wrapperTag="ul"
-          id="main"
-          navigation
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
-        >
-          {slides}
-        </Swiper>
-      </React.Fragment>
+      {loading ? (
+        <div className="container flex items-center justify-center">
+          <Loader />
+        </div>
+      ) : (
+        <>
+          <h2>{title}</h2>
+          <React.Fragment>
+            <Swiper
+              className={` h-[200px] select-none  rounded border-[2px] border-mainColor-200 ${className}`}
+              tag="section"
+              wrapperTag="ul"
+              id="main"
+              navigation
+              autoplay={{
+                delay: 6000,
+                disableOnInteraction: false,
+              }}
+            >
+              {slides}
+            </Swiper>
+          </React.Fragment>
+        </>
+      )}
     </>
   );
 };

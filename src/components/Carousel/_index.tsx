@@ -1,8 +1,9 @@
 import "swiper/swiper-bundle.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Loader from "../Loader";
 import BottomAd from "./BottomAd";
 import ImageAd from "./ImageAd";
 import MiddleAd from "./MiddleAd";
@@ -12,6 +13,15 @@ import TopAd from "./TopAd";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export const Carousel = ({ className = "" }) => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 5000); // set the timeout duration in milliseconds
+
+    return () => clearTimeout(timeout);
+  }, []); // empty array as second argument means this effect only runs once
+
   const slides = [];
 
   let n: number = 3;
@@ -33,21 +43,29 @@ export const Carousel = ({ className = "" }) => {
   }
 
   return (
-    <React.Fragment>
-      <Swiper
-        className={`bg-cyan-400 h-[700px] select-none  ${className}`}
-        tag="section"
-        wrapperTag="ul"
-        id="main"
-        navigation
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
-      >
-        {slides}
-      </Swiper>
-    </React.Fragment>
+    <>
+      {loading ? (
+        <div className="container flex items-center justify-center">
+          <Loader />
+        </div>
+      ) : (
+        <React.Fragment>
+          <Swiper
+            className={`bg-cyan-400 h-[700px] select-none  ${className}`}
+            tag="section"
+            wrapperTag="ul"
+            id="main"
+            navigation
+            autoplay={{
+              delay: 6000,
+              disableOnInteraction: false,
+            }}
+          >
+            {slides}
+          </Swiper>
+        </React.Fragment>
+      )}
+    </>
   );
 };
 
