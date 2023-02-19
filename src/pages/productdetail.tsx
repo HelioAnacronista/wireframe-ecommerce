@@ -3,13 +3,19 @@ import ClientFeedback from "@/components/ClientFeedback/_index";
 import ProductCategoryCarousel from "@/components/ProductCategoryCarousel/_index";
 import { MdOutlineExpandMore, MdStar } from "react-icons/md";
 
+let imgProducts: string[] = [
+  "images/productdetail-1.svg",
+  "images/productdetail-2.svg",
+  "images/productdetail-3.svg",
+];
+
 function productdetail() {
   return (
     <>
       <div>
         <CardProduct
-          image="/images/produto-img.svg"
-          price="R$ 2190.00"
+          images={imgProducts}
+          price={2000}
           title="Smart TV"
           key={1}
           description="Notebook Apple MacBook Pro 13 com M2 da Apple, 8 CPU, 10 GPU, 8GB RAM, 256GB SSD - Cinza-espacial"

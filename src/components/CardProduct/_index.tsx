@@ -6,13 +6,40 @@ type Props = {
   categoria: string[];
 };
 
+import { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import Price from "../Price";
 import Page from "../ProductCategoryCarousel/Page";
 import ProductInfo from "./ProductInfo";
 import ShippingEstimator from "./ShippingEstimator";
 
-function CardProduct({ title, price, description, image, categoria }: Props) {
+interface CardProductProps {
+  title: string;
+  price: number;
+  description: string;
+  images: string[];
+  categoria: string[];
+}
+
+function CardProduct({
+  title,
+  price,
+  description,
+  images,
+  categoria,
+}: CardProductProps) {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 0 && newPage <= 2) {
+      // aqui estamos limitando o número máximo de páginas em 3
+      setCurrentPage(newPage);
+    }
+    if (newPage == 3) {
+      setCurrentPage(0);
+    }
+  };
+
   return (
     <div className="container">
       <div className="mt-4 flex items-center">
@@ -27,10 +54,24 @@ function CardProduct({ title, price, description, image, categoria }: Props) {
 
       <div>
         <div className="mt-1 flex items-center justify-center">
-          <img src={image} width={"70%"} height={"70%"} />
+          <div className="mt-1 flex items-center justify-center">
+            <img
+              onClick={() => {
+                handlePageChange(currentPage + 1);
+              }}
+              src={images[currentPage]}
+              width={"70%"}
+              height={"70%"}
+            />
+          </div>
         </div>
-        <div className="my-2 flex items-center justify-center">
-          <Page page={1} totalPages={3} />
+        <div
+          onClick={() => {
+            handlePageChange(currentPage + 1);
+          }}
+          className="my-2 flex items-center justify-center"
+        >
+          <Page page={currentPage} totalPages={images.length} />
         </div>
       </div>
 

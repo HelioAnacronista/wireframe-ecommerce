@@ -15,7 +15,7 @@ function NavBar(): JSX.Element {
   return (
     <>
       <nav className="h-[40px] bg-[#F1F0F5]">
-        <div className="container mx-auto flex h-full items-center justify-center sm:hidden">
+        <div className="container mx-auto h-full items-center justify-center sm:hidden xl:flex">
           <Menuitems title={"Item menu 01"} subTitle={subTitleData} />
           <Menuitems title={"Item menu 02"} subTitle={subTitleData} />
           <Menuitems title={"Item menu 03"} subTitle={subTitleData} />
@@ -26,7 +26,7 @@ function NavBar(): JSX.Element {
 
         <div
           onClick={() => setShowSideBar(true)}
-          className="flex cursor-pointer items-center justify-center p-1 hover:bg-mainColor-100"
+          className=" flex cursor-pointer items-center justify-center p-1 hover:bg-mainColor-100"
         >
           <MdMenu size={34} />
           <Sidebar isOpen={showSideBar} />
@@ -38,7 +38,7 @@ function NavBar(): JSX.Element {
           onClick={handleCloseSidebar}
         ></div>
       )}
-      <div className="h-[8px] bg-[#5F5C6B]">1</div>
+      <div className="h-[8px] bg-[#5F5C6B]"></div>
     </>
   );
 }
