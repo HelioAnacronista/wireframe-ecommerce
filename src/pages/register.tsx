@@ -2,13 +2,13 @@ function register() {
   return (
     <>
       <div className="container">
-        <div className="bg-gray-50 flex min-h-screen flex-col items-center pt-6 sm:justify-center sm:pt-0">
+        <div className="flex min-h-screen flex-col items-center bg-mainColor-50 pt-6 sm:justify-center sm:pt-0">
           <div>
             <a href="/">
-              <h3 className="text-purple-600 text-4xl font-bold">Logo</h3>
+              <h3 className="text-4xl font-bold text-mainColor-900">Logo</h3>
             </a>
           </div>
-          <div className="bg-white mt-6 w-full overflow-hidden px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg">
+          <div className="mt-6 w-full overflow-hidden bg-white-900 px-6 py-4 shadow-md sm:max-w-md sm:rounded-lg">
             <form>
               <div>
                 <label

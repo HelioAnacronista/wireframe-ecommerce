@@ -50,7 +50,9 @@ function login() {
                         </a>
                       </div>
                       <div className="flex items-center justify-between pb-6">
-                        <p className="mb-0 mr-2">Don't have an account?</p>
+                        <p className="mb-0 mr-2">
+                          <a href="register">Don't have an account?</a>
+                        </p>
                         <button
                           type="button"
                           className="hover:bg-black inline-block rounded border-2 border-red-600 px-6 py-2 text-xs font-medium uppercase leading-tight text-red-600 transition duration-150 ease-in-out hover:bg-opacity-5 focus:outline-none focus:ring-0"
@@ -63,8 +65,8 @@ function login() {
                     </form>
                   </div>
                 </div>
-                <div className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
-                  <div className="text-white px-4 py-6 md:mx-6 md:p-12">
+                <div className="flex items-center rounded-b-lg bg-blue-violet-600 lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none">
+                  <div className="px-4 py-6 text-white-900 md:mx-6 md:p-12">
                     <h4 className="mb-6 text-xl font-semibold">
                       We are more than just a company
                     </h4>
