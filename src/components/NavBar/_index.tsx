@@ -26,7 +26,7 @@ function NavBar(): JSX.Element {
 
         <div
           onClick={() => setShowSideBar(true)}
-          className="flex cursor-pointer items-center justify-center p-1"
+          className="flex cursor-pointer items-center justify-center p-1 hover:bg-mainColor-100"
         >
           <MdMenu size={34} />
           <Sidebar isOpen={showSideBar} />

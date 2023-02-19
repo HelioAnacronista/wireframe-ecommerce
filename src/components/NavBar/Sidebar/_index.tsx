@@ -27,25 +27,30 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
     <div
       ref={sidebarRef}
-      className={`text-white fixed inset-y-0 left-0 w-64 bg-mainColor-400 p-4 transition-all ${
+      className={`text-white absolute inset-y-0 left-0 z-50 w-64 bg-mainColor-800 p-4 transition-all ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       <div>
-        <h2 className="mb-4 text-lg font-bold">Sidebar</h2>
+        <h2 className="mb-4 text-lg font-bold text-white-900">
+          <a href="/">Sidebar</a>
+        </h2>
         <ul>
           <li className="mb-2">
-            <a href="#" className="text-gray-400 hover:text-white">
-              Link 1
+            <a
+              href="productdetail"
+              className="text-white-900 hover:text-mainColor-200"
+            >
+              productdetail
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white-900 hover:text-mainColor-200">
               Link 2
             </a>
           </li>
           <li className="mb-2">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white-900 hover:text-mainColor-200">
               Link 3
             </a>
           </li>

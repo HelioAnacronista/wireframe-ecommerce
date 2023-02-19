@@ -28,14 +28,12 @@ export const Carousel = ({ className = "" }) => {
   for (let i = 0; i < n; i++) {
     slides.push(
       <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
-        <div>
-          <ImageAd />
+        <ImageAd />
+        <div className="container flex items-center justify-center">
+          <TopAd />
+          <MiddleAd />
           <div className="container flex items-center justify-center">
-            <TopAd />
-            <MiddleAd />
-            <div className="container flex items-center justify-center">
-              <BottomAd children={<Page page={i} totalPages={3} />} />
-            </div>
+            <BottomAd children={<Page page={i} totalPages={3} />} />
           </div>
         </div>
       </SwiperSlide>
@@ -51,7 +49,7 @@ export const Carousel = ({ className = "" }) => {
       ) : (
         <React.Fragment>
           <Swiper
-            className={`bg-cyan-400 h-[700px] select-none  ${className}`}
+            className={`h-[700px] ${className}`}
             tag="section"
             wrapperTag="ul"
             id="main"
