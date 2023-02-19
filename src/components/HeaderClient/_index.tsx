@@ -4,8 +4,8 @@ import Search from "../Search/Search";
 import AccessAccount from "./AccessAccount";
 import Cart from "./Cart";
 
-import ListFavorites from "./ListFavorites";
 import IconCompany from "./IconCompany";
+import ListFavorites from "./ListFavorites";
 
 export function HeaderClient() {
   const [showSearch, setShowSearch] = useState(false);
@@ -24,11 +24,9 @@ export function HeaderClient() {
             `}
           >
             {!showSearch ? <IconCompany img={pathImg} /> : null}
-
             <Search showSearch={showSearch} setShowSearch={setShowSearch} />
+            <AccessAccount />
           </div>
-
-          <AccessAccount />
 
           <div className="flex">
             <ListFavorites />

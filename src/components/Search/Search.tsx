@@ -8,7 +8,10 @@ interface searchProps {
 function Search({ showSearch, setShowSearch }: searchProps) {
   return (
     <>
-      <div className="mr-2 flex h-[48px] w-[578px] rounded-full bg-[#FFFFFF] p-2 sm:hidden">
+      <div
+        className="mr-2 flex h-[48px] w-[578px] rounded-full bg-[#FFFFFF] p-2 sm:hidden
+    xl:flex"
+      >
         <input
           type="text"
           value=""
@@ -18,10 +21,10 @@ function Search({ showSearch, setShowSearch }: searchProps) {
       focus:ring-[#fff]"
         />
 
-        <img src="/images/icon-test.svg" alt="" width={"40px"} />
+        <MdSearch size={40} className="h-8 cursor-pointer text-mainColor-500" />
       </div>
 
-      <div className="relative">
+      <div className="relative xl:hidden">
         <button
           className={`"flex focus:outline-none" items-center ${
             showSearch ? "hidden" : null
