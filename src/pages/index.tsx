@@ -2,28 +2,30 @@ import CardProduct from "@/components/CardProductHome/_index";
 import Carousel from "@/components/Carousel/_index";
 import ProductCategoryCarousel from "@/components/ProductCategoryCarousel/_index";
 import RegisterEmail from "@/components/RegisterEmail/_index";
-
-const products = [
-  { id: 1, name: "Product 1", price: 10.0, discountedPrice: 8.0 },
-  { id: 2, name: "Product 2", price: 20.0, discountedPrice: 16.0 },
-  { id: 3, name: "Product 3", price: 15.0, discountedPrice: 12.0 },
-  { id: 4, name: "Product 3", price: 15.0, discountedPrice: 12.0 },
-  { id: 5, name: "Product 3", price: 15.0, discountedPrice: 12.0 },
-  // adicione mais produtos aqui, se necessário
-];
+import { ProductDTO } from "@/models/product";
+import { useEffect, useState } from "react";
+import * as ProductServices from "../services/product-services";
 
 export default function Home() {
+  const [productList, setProductList] = useState<ProductDTO[]>();
+
+  useEffect(() => {
+    const getProduct = ProductServices.findAll();
+    setProductList(getProduct);
+  }, []);
+
   return (
     <>
       <Carousel />
 
       <div className="container mt-10 rounded border-[2px] border-mainColor-200 p-10">
-        {products.map((product) => (
+        {productList?.map((product) => (
           <CardProduct
             key={product.id}
+            imgUrl={product.imgUrl}
             name={product.name}
             price={product.price}
-            discountedPrice={product.discountedPrice}
+            discountedPrice={product.price - 10}
           />
         ))}
       </div>

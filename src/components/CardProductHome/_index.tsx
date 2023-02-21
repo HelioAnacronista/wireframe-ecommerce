@@ -3,6 +3,7 @@ import Loader from "../Loader";
 import Price from "../Price";
 
 interface CardProductHomeProps {
+  imgUrl: string;
   name: string;
   price: number;
   discountedPrice: number;
@@ -12,6 +13,7 @@ function CardProductHome({
   name,
   price,
   discountedPrice,
+  imgUrl,
 }: CardProductHomeProps) {
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +34,7 @@ function CardProductHome({
       ) : (
         <div className="border-indigo-600 container mt-5 font-sans">
           <div className="flex justify-center">
-            <img src="/images/produto-img.svg" alt="" />
+            <img src={imgUrl ? imgUrl : "/images/produto-img.svg"} alt="" />
           </div>
 
           <div className="">

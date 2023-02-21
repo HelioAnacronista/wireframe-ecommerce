@@ -1,10 +1,15 @@
-function AdImage() {
+type AdImageProps = {
+  src?: string;
+  alt?: string;
+};
+
+function AdImage({ src, alt }: AdImageProps) {
   return (
     <img
-      src={`https://picsum.photos/id/1/1920/1080`}
+      src={src}
       width={1920}
       height={1080}
-      alt={`Slide 1`}
+      alt={alt}
       className="z-0 object-cover sm:h-[592px] sm:w-[592px]"
     />
   );

@@ -7,8 +7,8 @@ function Top() {
         className="
         ml-20 mr-28  flex items-center justify-center
         rounded-full border-2 border-mainColor-50 
-        p-2 
-        text-center text-mainColor-50"
+        bg-mainColor-50 
+        p-2 text-center text-mainColor-900"
       >
         <MdStar />
         <MdStar />

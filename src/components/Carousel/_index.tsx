@@ -1,18 +1,27 @@
 import "swiper/swiper-bundle.css";
 
+import { ProductDTO } from "@/models/product";
 import React, { useEffect, useState } from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import * as ProductServices from "../../services/product-services";
 import Loader from "../Loader";
 import BottomAd from "./BottomAd";
 import ImageAd from "./ImageAd";
 import MiddleAd from "./MiddleAd";
 import Page from "./Page";
 import TopAd from "./TopAd";
-
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export const Carousel = ({ className = "" }) => {
+  const [productCarousel, setProductCarousel] = useState<ProductDTO[]>();
+
+  const N: number = 3;
+  useEffect(() => {
+    const getNProduct = ProductServices.findAll();
+    setProductCarousel(getNProduct);
+  }, []);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -24,14 +33,17 @@ export const Carousel = ({ className = "" }) => {
 
   const slides = [];
 
-  let n: number = 3;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < N; i++) {
     slides.push(
       <SwiperSlide className="w-full" key={`slide-${i}`} tag="li">
-        <ImageAd />
+        <ImageAd
+          src={productCarousel?.[i]?.imgUrl}
+          alt={productCarousel?.[i]?.description}
+          key={productCarousel?.[i]?.id}
+        />
         <div className="container flex items-center justify-center">
           <TopAd />
-          <MiddleAd />
+          <MiddleAd name={productCarousel?.[i]?.name} />
           <div className="container flex items-center justify-center">
             <BottomAd children={<Page page={i} totalPages={3} />} />
           </div>
