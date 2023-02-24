@@ -14,9 +14,9 @@ import ProductInfo from "./ProductInfo";
 import ShippingEstimator from "./ShippingEstimator";
 
 interface CardProductProps {
-  title: string;
-  price: number;
-  description: string;
+  title?: string;
+  price?: number;
+  description?: string;
   images: string[];
   categoria: string[];
 }
@@ -39,6 +39,10 @@ function CardProduct({
       setCurrentPage(0);
     }
   };
+
+  function TenX(value: any) {
+    return value / 10;
+  }
 
   return (
     <div className="container">
@@ -83,7 +87,7 @@ function CardProduct({
           <p>{description}</p>
         </div>
         <div className="my-2">
-          <Price className="text-xl font-bold" price={2190.0} />
+          <Price className="text-xl font-bold" price={Number(price)} />
         </div>
         <div>
           <button className="h-[50px] w-[140px] rounded-[0.5rem] bg-mainColor-900 text-white-900">
@@ -98,21 +102,23 @@ function CardProduct({
             <img src="/images/cartao.svg" alt="" />
           </div>
           <div>
-            <Price className="text-xl font-bold" price={2190.0} />
+            <Price className="text-xl font-bold" price={Number(price)} />
           </div>
         </div>
-        <div>
-          <p>ou até 10x de R$219.00 sem juros no Cartão de Crédito</p>
+        <div className="flex">
+          <Price
+            beforeName="por até 10x de "
+            afterName=" sem juros no Cartão de Crédito "
+            price={Number(TenX(price))}
+          />
         </div>
 
         <div className="mt-4 flex">
           <div>
-            <div>
-              <img src="/images/icone-pix.svg" alt="" />
-            </div>
-            <div>
-              <Price className="text-xl font-bold" price={2190.0} />
-            </div>
+            <img src="/images/icone-pix.svg" alt="" />
+          </div>
+          <div>
+            <Price className="text-xl font-bold" price={Number(price)} />
           </div>
         </div>
         <div>

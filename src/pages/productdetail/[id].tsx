@@ -1,24 +1,41 @@
 import CardProduct from "@/components/CardProduct/_index";
 import ClientFeedback from "@/components/ClientFeedback/_index";
 import ProductCategoryCarousel from "@/components/ProductCategoryCarousel/_index";
+import { ProductDTO } from "@/models/product";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { MdOutlineExpandMore, MdStar } from "react-icons/md";
-
-let imgProducts: string[] = [
-  "images/productdetail-1.svg",
-  "images/productdetail-2.svg",
-  "images/productdetail-3.svg",
-];
+import * as ProductServices from "../../services/product-services";
 
 function productdetail() {
+  const [product, setproduct] = useState<ProductDTO>();
+
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+    if (id) {
+      // Verifica se id é válido
+      let product = ProductServices.findById(Number(id));
+      setproduct(product);
+    }
+  }, [id]);
+
+  let imgProducts: string[] = [
+    "images/productdetail-1.svg",
+    "images/productdetail-2.svg",
+    "images/productdetail-3.svg",
+  ];
+
   return (
     <>
       <div>
         <CardProduct
           images={imgProducts}
-          price={2000}
-          title="Smart TV"
-          key={1}
-          description="Notebook Apple MacBook Pro 13 com M2 da Apple, 8 CPU, 10 GPU, 8GB RAM, 256GB SSD - Cinza-espacial"
+          price={product?.price}
+          title={product?.name}
+          key={product?.id}
+          description={product?.description}
           categoria={["domain.com.br", "Informática", "Notebook"]}
         />
       </div>

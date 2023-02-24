@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import * as ProductServices from "../services/product-services";
 
 export default function Home() {
+  
   const [productList, setProductList] = useState<ProductDTO[]>();
 
   useEffect(() => {
