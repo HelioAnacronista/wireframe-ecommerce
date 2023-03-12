@@ -21,8 +21,10 @@ function productdetail() {
     }
   }, [id]);
 
+  let imgProductsbyId : string = product?.imgUrl || "images/productdetail-2.svg";
+
   let imgProducts: string[] = [
-    "images/productdetail-1.svg",
+      imgProductsbyId,
     "images/productdetail-2.svg",
     "images/productdetail-3.svg",
   ];
@@ -31,6 +33,7 @@ function productdetail() {
     <>
       <div>
         <CardProduct
+          img={product?.imgUrl}
           images={imgProducts}
           price={product?.price}
           title={product?.name}

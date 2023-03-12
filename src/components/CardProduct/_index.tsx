@@ -2,7 +2,8 @@ type Props = {
   title: string;
   price: string;
   description: string;
-  image: string;
+  images: string[];
+  img?: string;
   categoria: string[];
 };
 
@@ -18,6 +19,7 @@ interface CardProductProps {
   price?: number;
   description?: string;
   images: string[];
+  img?: string;
   categoria: string[];
 }
 
@@ -26,6 +28,7 @@ function CardProduct({
   price,
   description,
   images,
+  img,
   categoria,
 }: CardProductProps) {
   const [currentPage, setCurrentPage] = useState(0);

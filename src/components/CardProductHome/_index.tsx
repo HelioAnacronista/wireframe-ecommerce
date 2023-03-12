@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "../Loader";
 import Price from "../Price";
 
 interface CardProductHomeProps {
+  id: number;
   imgUrl: string;
   name: string;
   price: number;
@@ -10,6 +12,7 @@ interface CardProductHomeProps {
 }
 
 function CardProductHome({
+  id,
   name,
   price,
   discountedPrice,
@@ -34,7 +37,10 @@ function CardProductHome({
       ) : (
         <div className="border-indigo-600 container mt-5 font-sans">
           <div className="flex justify-center">
+            <Link className="cursor-pointer" href={`/productdetail/${id}`} > 
             <img src={imgUrl ? imgUrl : "/images/produto-img.svg"} alt="" />
+            </Link>
+            
           </div>
 
           <div className="">

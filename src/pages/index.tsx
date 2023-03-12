@@ -22,6 +22,7 @@ export default function Home() {
       <div className="container mt-10 rounded border-[2px] border-mainColor-200 p-10">
         {productList?.map((product) => (
           <CardProduct
+            id={product.id}
             key={product.id}
             imgUrl={product.imgUrl}
             name={product.name}
