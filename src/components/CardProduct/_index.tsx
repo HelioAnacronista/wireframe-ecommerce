@@ -7,6 +7,7 @@ type Props = {
   categoria: string[];
 };
 
+import { ProductInfosDTO } from "@/models/productinfo";
 import { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import Price from "../Price";
@@ -21,6 +22,7 @@ interface CardProductProps {
   images: string[];
   img?: string;
   categoria: string[];
+  productInfo?: ProductInfosDTO;
 }
 
 function CardProduct({
@@ -30,6 +32,7 @@ function CardProduct({
   images,
   img,
   categoria,
+  productInfo,
 }: CardProductProps) {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -134,7 +137,7 @@ function CardProduct({
       </div>
 
       <div>
-        <ProductInfo />
+        <ProductInfo img={productInfo?.ProductDescription} />
       </div>
     </div>
   );

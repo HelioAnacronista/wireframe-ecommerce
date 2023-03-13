@@ -21,13 +21,9 @@ function productdetail() {
     }
   }, [id]);
 
-  let imgProductsbyId : string = product?.imgUrl || "images/productdetail-2.svg";
+  let imgProductsbyId: string = product?.imgUrl || "images/MacbookPro.jpg";
 
-  let imgProducts: string[] = [
-      imgProductsbyId,
-    "images/productdetail-2.svg",
-    "images/productdetail-3.svg",
-  ];
+  let imgProducts: string[] = [imgProductsbyId, "images/mac.jpg"];
 
   return (
     <>
@@ -40,6 +36,7 @@ function productdetail() {
           key={product?.id}
           description={product?.description}
           categoria={["domain.com.br", "Informática", "Notebook"]}
+          productInfo={product?.productInfo}
         />
       </div>
 

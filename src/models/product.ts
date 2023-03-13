@@ -1,10 +1,12 @@
-import { CategoryDTO } from "./category"
+import { CategoryDTO } from "./category";
+import { ProductInfosDTO } from "./productinfo";
 
 export type ProductDTO = {
-   id : number,
-   name : string,
-   description : string,
-   price : number,
-   imgUrl : string,
-   categories : CategoryDTO[];
-}
+  id: number;
+  name: string;
+  productInfo?: ProductInfosDTO;
+  description: string;
+  price: number;
+  imgUrl: string;
+  categories: CategoryDTO[];
+};
