@@ -15,10 +15,13 @@ let products: ProductDTO[] = [
     price: 90.5,
     productInfo: {
       ProductDescription: "/images/mac.jpg",
-      Characteristics: "",
-      Contact: "",
-      Dimensions: "",
-      TechnicalSpecifications: "",
+      Characteristics: "/images/imgdefault.svg",
+      Contact: {
+        title: "5598802661",
+        description: "Lige para mais informaçoes",
+      },
+      Dimensions: "/images/imgdefault.svg",
+      TechnicalSpecifications: "/images/imgdefault.svg",
     },
     imgUrl:
       "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/1-big.jpg",

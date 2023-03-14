@@ -1,7 +1,13 @@
+export type htmlDTO = {
+  title: string;
+  description: string;
+  img?: string;
+};
+
 export type ProductInfosDTO = {
-  ProductDescription: string;
-  Characteristics: string;
-  TechnicalSpecifications: string;
-  Dimensions: string;
-  Contact: string;
+  ProductDescription: string | htmlDTO;
+  Characteristics: string | htmlDTO;
+  TechnicalSpecifications: string | htmlDTO;
+  Dimensions: string | htmlDTO;
+  Contact: string | htmlDTO;
 };

@@ -16,6 +16,7 @@ import ProductInfo from "./ProductInfo";
 import ShippingEstimator from "./ShippingEstimator";
 
 interface CardProductProps {
+  idProduct: number;
   title?: string;
   price?: number;
   description?: string;
@@ -26,6 +27,7 @@ interface CardProductProps {
 }
 
 function CardProduct({
+  idProduct,
   title,
   price,
   description,
@@ -137,7 +139,14 @@ function CardProduct({
       </div>
 
       <div>
-        <ProductInfo img={productInfo?.ProductDescription} />
+        <ProductInfo
+          Contact={productInfo?.Contact}
+          ProductDescription={productInfo?.ProductDescription}
+          Characteristics={productInfo?.Characteristics}
+          Dimensions={productInfo?.Dimensions}
+          TechnicalSpecifications={productInfo?.TechnicalSpecifications}
+          key={idProduct}
+        />
       </div>
     </div>
   );
