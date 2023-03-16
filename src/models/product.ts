@@ -1,6 +1,14 @@
 import { CategoryDTO } from "./category";
 import { ProductInfosDTO } from "./productinfo";
 
+export type clientProductDTO = {
+  id: number;
+  name: string;
+  comment: string;
+  stars: number;
+  img: string;
+};
+
 export type ProductDTO = {
   id: number;
   name: string;
@@ -9,4 +17,5 @@ export type ProductDTO = {
   price: number;
   imgUrl: string;
   categories: CategoryDTO[];
+  clients?: clientProductDTO[];
 };

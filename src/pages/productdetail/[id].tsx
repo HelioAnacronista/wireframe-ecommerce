@@ -8,19 +8,30 @@ import { MdOutlineExpandMore, MdStar } from "react-icons/md";
 import * as ProductServices from "../../services/product-services";
 
 function productdetail() {
+  //variavel produto
   const [product, setproduct] = useState<ProductDTO>();
 
+  //quantidade de avaloes que serar mostrado para o usuario
+  const [numAvaliacoes, setNumAvaliacoes] = useState(2);
+
+  //mostrar todos as avaliaçoes
+  const handleClick = () => {
+    setNumAvaliacoes(product?.clients?.length || 20);
+  };
+
+  //captura a id do produto
   const router = useRouter();
   const { id } = router.query;
 
+  //set o usestate do product
   useEffect(() => {
     if (id) {
-      // Verifica se id é válido
       let product = ProductServices.findById(Number(id));
       setproduct(product);
     }
   }, [id]);
 
+  //testando qual serar definido
   let imgProductsbyId: string = product?.imgUrl || "images/MacbookPro.jpg";
 
   let imgProducts: string[] = [imgProductsbyId, "images/mac.jpg"];
@@ -37,6 +48,7 @@ function productdetail() {
           description={product?.description}
           categoria={["domain.com.br", "Informática", "Notebook"]}
           productInfo={product?.productInfo}
+          idProduct={Number(id)}
         />
       </div>
 
@@ -85,14 +97,28 @@ function productdetail() {
           </div>
         </div>
 
-        <div className="my-10">
-          <ClientFeedback />
-          <ClientFeedback />
-        </div>
-        <div className="flex items-center justify-center">
-          <button className="h-[55px] w-[250px] rounded-3xl bg-mainColor-900 text-white-900">
-            Ver mais avaliações
-          </button>
+        <div>
+          <div className="my-10">
+            {product?.clients?.slice(0, numAvaliacoes).map((c, index) => (
+              <ClientFeedback
+                key={index}
+                name={c.name}
+                comment={c.comment}
+                stars={c.stars}
+                img={c.img}
+              />
+            ))}
+          </div>
+          {numAvaliacoes < 4 && (
+            <div className="flex items-center justify-center">
+              <button
+                className="h-[55px] w-[250px] rounded-3xl bg-mainColor-900 text-white-900"
+                onClick={handleClick}
+              >
+                Ver mais avaliações
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="mt-10">

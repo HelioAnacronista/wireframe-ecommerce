@@ -33,6 +33,40 @@ let products: ProductDTO[] = [
         name: "Livros",
       },
     ],
+    clients: [
+      {
+        id: 1,
+        name: "João 1",
+        comment:
+          "Produto maravilhoso! Surpreendeu minhas expectativas, brasileiro, 100% original, veio tudo certinho, sem escoriações. Só trocaria a transportadora Sequoia que mente nas atualizações de rastreio, como por exemplo colocou que fez tentativas de entrega na minha casa, sendo que eu estava em casa e as tentativas não foram realizadas. Foi desgastante e estressante, mas o produto é perfeito e o atendimento da Ponto também.",
+        stars: 5,
+        img: "/images/photoclient.svg",
+      },
+      {
+        id: 2,
+        name: "Maria 2",
+        comment:
+          "Foi desgastante e estressante, mas o produto é perfeito e o atendimento da Ponto também..",
+        stars: 2,
+        img: "/images/photoclient.svg",
+      },
+      {
+        id: 3,
+        name: "João 3",
+        comment:
+          "Produto maravilhoso! Surpreendeu minhas expectativas, brasileiro, 100% original, veio tudo certinho, sem escoriações. Só trocaria a transportadora Sequoia que mente nas atualizações de rastreio, como por exemplo colocou que fez tentativas de entrega na minha casa, sendo que eu estava em casa e as tentativas não foram realizadas. Foi desgastante e estressante, mas o produto é perfeito e o atendimento da Ponto também.",
+        stars: 5,
+        img: "/images/photoclient.svg",
+      },
+      {
+        id: 4,
+        name: "João 4",
+        comment:
+          "Produto maravilhoso! Surpreendeu minhas expectativas, brasileiro, 100% original, veio tudo certinho, sem escoriações. Só trocaria a transportadora Sequoia que mente nas atualizações de rastreio, como por exemplo colocou que fez tentativas de entrega na minha casa, sendo que eu estava em casa e as tentativas não foram realizadas. Foi desgastante e estressante, mas o produto é perfeito e o atendimento da Ponto também.",
+        stars: 5,
+        img: "/images/photoclient.svg",
+      },
+    ],
   },
   {
     id: 2,
